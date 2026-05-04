@@ -48,8 +48,8 @@ const Sidebar = ({
   );
 
   return (
-    <div className="lg:col-span-4 space-y-6">
-      <div className="glass-card p-8 rounded-[3rem] border border-zinc-800/50 shadow-2xl sticky top-20">
+    <div className="lg:col-span-4 space-y-10">
+      <div className="relative">
         <div className="flex items-center gap-4 mb-2">
           <div className="w-12 h-12 bg-yellow-400 rounded-2xl flex items-center justify-center shadow-lg shadow-yellow-400/20 rotate-3">
             <Music className="text-black" size={28} />

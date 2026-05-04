@@ -22,9 +22,9 @@ const Workstation = ({
   audioRef
 }) => {
   return (
-    <div className="lg:col-span-8 space-y-8">
+    <div className="lg:col-span-8 space-y-8 pb-20">
       {/* HEADER INFO */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 px-4">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div className="space-y-1">
           <h2 className="text-2xl font-black uppercase tracking-tighter flex items-center gap-3">
             <Terminal size={24} className="text-yellow-400" />
@@ -40,13 +40,11 @@ const Workstation = ({
         </div>
       </div>
 
-      <div className={`glass-card p-10 rounded-[3.5rem] border transition-all duration-700 flex flex-col flex-1 min-h-[850px] relative overflow-hidden ${
-        loading || aiLoading ? 'border-yellow-400/40 shadow-[0_0_50px_rgba(250,204,21,0.1)]' : 'border-zinc-800/50'
-      }`}>
+      <div className="flex flex-col flex-1 min-h-[700px] relative">
         
         {/* TOP LOADING BAR (Integrated) */}
         {(loading || aiLoading) && (
-          <div className="absolute top-0 left-0 right-0 h-1 z-[60] overflow-hidden bg-zinc-900">
+          <div className="absolute top-0 left-0 right-0 h-1 z-[60] overflow-hidden bg-zinc-900 rounded-full">
             <div className="h-full bg-yellow-400 animate-[marquee_1.5s_linear_infinite]" style={{ width: '40%' }} />
           </div>
         )}
@@ -101,12 +99,12 @@ const Workstation = ({
 
         {/* 3. TEXTAREA AREA */}
         <div className="flex-1 relative mb-10 z-10">
-          <div className="absolute top-6 left-6 flex items-center gap-2 pointer-events-none">
+          <div className="absolute top-4 left-4 flex items-center gap-2 pointer-events-none">
              <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
              <span className="text-[9px] font-black text-zinc-700 uppercase tracking-widest">Digital Recording Buffer</span>
           </div>
           <textarea
-            className="w-full h-full p-12 pt-16 text-2xl font-black bg-black/40 rounded-[3rem] border-2 border-zinc-800/50 focus:border-yellow-400/20 outline-none resize-none placeholder:text-zinc-800 leading-relaxed custom-scrollbar shadow-inner text-white transition-all"
+            className="w-full h-full p-6 pt-12 text-xl md:text-2xl font-black bg-black/40 rounded-3xl border-2 border-zinc-800/50 focus:border-yellow-400/20 outline-none resize-none placeholder:text-zinc-800 leading-relaxed custom-scrollbar shadow-inner text-white transition-all"
             placeholder="Ketik atau generate naskah di sini..."
             value={text}
             onChange={e => setText(e.target.value)}
@@ -115,9 +113,9 @@ const Workstation = ({
             <button 
               onClick={handleFixScript} 
               disabled={aiLoading} 
-              className="absolute bottom-8 right-8 bg-zinc-900/90 backdrop-blur border border-zinc-700 text-yellow-400 px-8 py-4 rounded-full text-[11px] font-black flex items-center gap-3 hover:bg-yellow-400 hover:text-black transition-all shadow-2xl active:scale-90"
+              className="absolute bottom-4 right-4 bg-zinc-900/90 backdrop-blur border border-zinc-700 text-yellow-400 px-6 py-3 rounded-full text-[10px] font-black flex items-center gap-2 hover:bg-yellow-400 hover:text-black transition-all shadow-2xl active:scale-90"
             >
-              <Sparkles size={16} /> SEMPURNAKAN SCRIPT
+              <Sparkles size={14} /> SEMPURNAKAN SCRIPT
             </button>
           )}
         </div>
