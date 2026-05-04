@@ -107,8 +107,9 @@ const App = () => {
     setIsPlaying(false);
 
     try {
-      const selectedVoice = voices.find(v => v.name === voice);
-      const audioBlob = await generateSpeech(text, selectedVoice.mapping, selectedAudioModel, apiKey);
+      const selectedVoice = voices.find(v => v.name === voice) || voices[0];
+      const voiceMapping = selectedVoice?.mapping || 'nova';
+      const audioBlob = await generateSpeech(text, voiceMapping, selectedAudioModel, apiKey);
       setAudioUrl(URL.createObjectURL(audioBlob));
       setIsPlaying(true);
     } catch (err) {
