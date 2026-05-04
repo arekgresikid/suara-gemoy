@@ -3,11 +3,13 @@ import Sidebar from './components/Sidebar';
 import Workstation from './components/Workstation';
 import LoadingOverlay from './components/LoadingOverlay';
 import Marquee from './components/Marquee';
+import WelcomeModal from './components/WelcomeModal';
 import { callPollinationsText, generateSpeech } from './utils/api';
 import { voices, devices, environments, styles } from './constants/data';
 
 const App = () => {
   // State Management
+  const [showWelcome, setShowWelcome] = useState(true);
   const [text, setText] = useState('');
   const [topic, setTopic] = useState('');
   const [voice, setVoice] = useState('Aoede');
@@ -120,11 +122,16 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-yellow-400 selection:text-black">
-      <LoadingOverlay visible={loading || aiLoading} />
-      <Marquee />
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-yellow-400 selection:text-black overflow-x-hidden">
+      <WelcomeModal isOpen={showWelcome} onClose={() => setShowWelcome(false)} />
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 pt-16 pb-12 px-4">
+      {/* Global Background Glows */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-yellow-400/5 blur-[150px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-yellow-400/5 blur-[150px] rounded-full" />
+      </div>
+
+      <div className="relative z-10 max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 pt-24 pb-20 px-6">
         <Sidebar 
           voice={voice} setVoice={setVoice}
           device={device} setDevice={setDevice}
