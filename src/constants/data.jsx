@@ -63,6 +63,7 @@ export const aiModels = [
 ];
 
 export const audioModels = [
-  { id: 'openai-audio', label: 'GPT Audio Mini' },
-  { id: 'openai-audio-large', label: 'GPT Audio 1.5' }
+  { id: 'elevenlabs', label: 'ElevenLabs v3 (Premium)' },
+  { id: 'qwen-tts', label: 'Qwen 3 TTS (Fast)' },
+  { id: 'qwen-tts-instruct', label: 'Qwen 3 TTS Instruct (Emotional)' }
 ];

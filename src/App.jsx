@@ -21,7 +21,7 @@ const App = () => {
   const [intensity, setIntensity] = useState(100);
   const [targetDuration, setTargetDuration] = useState(15);
   const [selectedModel, setSelectedModel] = useState('openai');
-  const [selectedAudioModel, setSelectedAudioModel] = useState('openai-audio');
+  const [selectedAudioModel, setSelectedAudioModel] = useState('elevenlabs');
 
   // Audio Player State
   const [isPlaying, setIsPlaying] = useState(false);
