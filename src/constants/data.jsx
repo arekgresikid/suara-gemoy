@@ -6,22 +6,25 @@ import {
 import React from 'react';
 
 export const voices = [
+  // CEWEK - GEMOY & CENTIL
   { name: 'Aoede', tags: ['Ceria', 'Gen-Z'], mapping: 'nova' },
   { name: 'Despina', tags: ['Manja', 'Imut'], mapping: 'shimmer' },
   { name: 'Callirrhoe', tags: ['Sangat Centil'], mapping: 'shimmer' },
-  { name: 'Kore', tags: ['Reviewer', 'Cepat'], mapping: 'alloy' },
+  { name: 'Bella', tags: ['Imut', 'Kawaii'], mapping: 'bella' },
+  { name: 'Rachel', tags: ['Dewasa', 'Elegan'], mapping: 'rachel' },
+  { name: 'Sarah', tags: ['Kalem', 'Soft'], mapping: 'sarah' },
+  { name: 'Lily', tags: ['Kanak-kanak'], mapping: 'lily' },
+  { name: 'Alnilam', tags: ['Narator', 'Review'], mapping: 'alloy' },
+  
+  // COWOK - BASS & COOL
   { name: 'Puck', tags: ['Pria', 'Lucu'], mapping: 'echo' },
   { name: 'Zephyr', tags: ['Pria', 'Cool'], mapping: 'onyx' },
-  { name: 'Charon', tags: ['Pria', 'Berat'], mapping: 'onyx' },
-  { name: 'Fenrir', tags: ['Pria', 'Deep'], mapping: 'onyx' },
-  { name: 'Leda', tags: ['Wanita', 'Soft'], mapping: 'fable' },
-  { name: 'Autonoe', tags: ['Soft Girl'], mapping: 'fable' },
-  { name: 'Erinome', tags: ['Elegan'], mapping: 'nova' },
-  { name: 'Algieba', tags: ['Pria', 'Wibawa'], mapping: 'onyx' },
-  { name: 'Achernar', tags: ['Pria', 'Energi'], mapping: 'echo' },
-  { name: 'Alnilam', tags: ['Wanita', 'Narasi'], mapping: 'alloy' },
-  { name: 'Gacrux', tags: ['Wanita', 'Tegas'], mapping: 'alloy' },
-  { name: 'Zubenelgenubi', tags: ['Pria', 'Unik'], mapping: 'echo' },
+  { name: 'Adam', tags: ['Pria', 'Deep'], mapping: 'adam' },
+  { name: 'Antoni', tags: ['Pria', 'Wibawa'], mapping: 'antoni' },
+  { name: 'Liam', tags: ['Pria', 'Energi'], mapping: 'liam' },
+  { name: 'Josh', tags: ['Pria', 'Reviewer'], mapping: 'josh' },
+  { name: 'Sam', tags: ['Pria', 'Casual'], mapping: 'sam' },
+  { name: 'Brian', tags: ['Pria', 'Narator'], mapping: 'brian' },
 ];
 
 export const devices = [
