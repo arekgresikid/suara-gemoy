@@ -40,7 +40,7 @@ const Workstation = ({
         </div>
       </div>
 
-      <div className="flex flex-col flex-1 min-h-[700px] relative">
+      <div className="flex flex-col relative">
         
         {/* TOP LOADING BAR (Integrated) */}
         {(loading || aiLoading) && (
@@ -104,7 +104,8 @@ const Workstation = ({
              <span className="text-[9px] font-black text-zinc-700 uppercase tracking-widest">Digital Recording Buffer</span>
           </div>
           <textarea
-            className="w-full h-full p-6 pt-12 text-xl md:text-2xl font-black bg-black/40 rounded-3xl border-2 border-zinc-800/50 focus:border-yellow-400/20 outline-none resize-none placeholder:text-zinc-800 leading-relaxed custom-scrollbar shadow-inner text-white transition-all"
+            rows={3}
+            className="w-full p-6 pt-12 text-xl md:text-2xl font-black bg-black/40 rounded-3xl border-2 border-zinc-800/50 focus:border-yellow-400/20 outline-none resize-y placeholder:text-zinc-800 leading-relaxed custom-scrollbar shadow-inner text-white transition-all"
             placeholder="Ketik atau generate naskah di sini..."
             value={text}
             onChange={e => setText(e.target.value)}
