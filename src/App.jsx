@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import Workstation from './components/Workstation';
+import { Download } from 'lucide-react';
 import LoadingOverlay from './components/LoadingOverlay';
 import Marquee from './components/Marquee';
 import WelcomeModal from './components/WelcomeModal';
@@ -162,6 +163,25 @@ const App = () => {
           audioRef={audioRef}
         />
       </div>
+
+      {/* Download Shortcut Footer */}
+      <footer className="relative z-10 max-w-[1400px] mx-auto px-6 pb-10">
+        <div className="flex justify-center">
+          <a 
+            href="/download.html" 
+            target="_blank"
+            className="group flex items-center gap-3 bg-zinc-900/50 border-2 border-zinc-800 hover:border-yellow-400 px-6 py-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+          >
+            <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform">
+              <Download size={14} className="text-black" />
+            </div>
+            <div className="text-left">
+              <p className="text-[10px] font-black text-white uppercase tracking-widest leading-none">Download Assets</p>
+              <p className="text-[8px] text-zinc-500 font-bold uppercase mt-1">Prompt & GitHub Repository</p>
+            </div>
+          </a>
+        </div>
+      </footer>
 
       <style>{`
         .custom-scrollbar::-webkit-scrollbar { width: 4px; height: 4px; }

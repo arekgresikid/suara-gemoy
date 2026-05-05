@@ -60,6 +60,7 @@ const Sidebar = ({
           </div>
         </div>
 
+
         <div className="h-px bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 my-8 opacity-50" />
         
         <div className="space-y-8">
