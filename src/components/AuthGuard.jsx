@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Lock, ShieldCheck, AlertCircle, KeyRound } from 'lucide-react';
+import { Lock, ShieldCheck, AlertCircle, KeyRound, Eye, EyeOff } from 'lucide-react';
 
 const AuthGuard = ({ children }) => {
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
 
   const APP_PASSWORD = import.meta.env.VITE_APP_PASSWORD;
 
@@ -62,13 +63,20 @@ const AuthGuard = ({ children }) => {
                 <KeyRound size={18} />
               </div>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="ENTER PASSWORD"
-                className={`w-full bg-zinc-900/50 border-2 ${error ? 'border-red-500/50 animate-shake' : 'border-zinc-800 focus:border-yellow-400'} py-5 pl-14 pr-6 rounded-2xl text-xs font-black uppercase tracking-widest outline-none transition-all placeholder:text-zinc-700`}
+                className={`w-full bg-zinc-900/50 border-2 ${error ? 'border-red-500/50 animate-shake' : 'border-zinc-800 focus:border-yellow-400'} py-5 pl-14 pr-14 rounded-2xl text-xs font-black uppercase tracking-widest outline-none transition-all placeholder:text-zinc-700`}
                 autoFocus
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute inset-y-0 right-5 flex items-center text-zinc-500 hover:text-yellow-400 transition-colors"
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
             </div>
 
             {error && (
