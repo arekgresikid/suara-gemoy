@@ -5,7 +5,8 @@ import { Download } from 'lucide-react';
 import LoadingOverlay from './components/LoadingOverlay';
 import Marquee from './components/Marquee';
 import WelcomeModal from './components/WelcomeModal';
-import { callPollinationsText, generateSpeech } from './utils/api';
+import AuthGuard from './components/AuthGuard';
+import { callPollinationsText, generateSpeech, generateElevenLabsSpeech } from './utils/api';
 import { voices, devices, environments, styles } from './constants/data';
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
   const audioRef = useRef(null);
 
   const apiKey = import.meta.env.VITE_POLLINATIONS_API_KEY; 
+  const elevenLabsApiKey = import.meta.env.VITE_ELEVENLABS_API_KEY;
 
   // Audio Event Listeners
   useEffect(() => {
@@ -111,8 +113,16 @@ const App = () => {
 
     try {
       const selectedVoice = voices.find(v => v.name === voice) || voices[0];
-      const voiceMapping = selectedVoice?.mapping || 'nova';
-      const audioBlob = await generateSpeech(text, voiceMapping, selectedAudioModel, apiKey);
+      
+      let audioBlob;
+      if (selectedAudioModel === 'elevenlabs') {
+        const voiceId = selectedVoice?.elevenLabsId || 'pNInz6obpgnuMvscL6mE'; // Default to a popular voice if not set
+        audioBlob = await generateElevenLabsSpeech(text, voiceId, elevenLabsApiKey);
+      } else {
+        const voiceMapping = selectedVoice?.mapping || 'nova';
+        audioBlob = await generateSpeech(text, voiceMapping, selectedAudioModel, apiKey);
+      }
+
       setAudioUrl(URL.createObjectURL(audioBlob));
       setIsPlaying(true);
     } catch (err) {
@@ -123,7 +133,8 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-yellow-400 selection:text-black overflow-x-hidden">
+    <AuthGuard>
+      <div className="min-h-screen bg-black text-white font-sans selection:bg-yellow-400 selection:text-black overflow-x-hidden">
       <WelcomeModal isOpen={showWelcome} onClose={() => setShowWelcome(false)} />
 
       {/* Global Background Glows */}
@@ -192,6 +203,7 @@ const App = () => {
         .animate-marquee { animation: marquee 25s linear infinite; }
       `}</style>
     </div>
+    </AuthGuard>
   );
 };
 

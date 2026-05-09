@@ -7,24 +7,24 @@ import React from 'react';
 
 export const voices = [
   // CEWEK - GEMOY & CENTIL
-  { name: 'Aoede', tags: ['Ceria', 'Gen-Z'], mapping: 'nova' },
-  { name: 'Despina', tags: ['Manja', 'Imut'], mapping: 'shimmer' },
-  { name: 'Callirrhoe', tags: ['Sangat Centil'], mapping: 'shimmer' },
-  { name: 'Bella', tags: ['Imut', 'Kawaii'], mapping: 'bella' },
-  { name: 'Rachel', tags: ['Dewasa', 'Elegan'], mapping: 'rachel' },
-  { name: 'Sarah', tags: ['Kalem', 'Soft'], mapping: 'sarah' },
-  { name: 'Lily', tags: ['Kanak-kanak'], mapping: 'lily' },
-  { name: 'Alnilam', tags: ['Narator', 'Review'], mapping: 'alloy' },
+  { name: 'Aoede', tags: ['Ceria', 'Gen-Z'], mapping: 'nova', elevenLabsId: '21m00Tcm4lPqWVTH4YWZ' },
+  { name: 'Despina', tags: ['Manja', 'Imut'], mapping: 'shimmer', elevenLabsId: 'AZnzlk1XhkDUD9ke64L0' },
+  { name: 'Callirrhoe', tags: ['Sangat Centil'], mapping: 'shimmer', elevenLabsId: 'EXAVITQu4vr4xnSDxMaL' },
+  { name: 'Bella', tags: ['Imut', 'Kawaii'], mapping: 'bella', elevenLabsId: 'ErXw9S1q38YvI4TN9vsh' },
+  { name: 'Rachel', tags: ['Dewasa', 'Elegan'], mapping: 'rachel', elevenLabsId: '21m00Tcm4lPqWVTH4YWZ' },
+  { name: 'Sarah', tags: ['Kalem', 'Soft'], mapping: 'sarah', elevenLabsId: 'EXAVITQu4vr4xnSDxMaL' },
+  { name: 'Lily', tags: ['Kanak-kanak'], mapping: 'lily', elevenLabsId: 'AZnzlk1XhkDUD9ke64L0' },
+  { name: 'Alnilam', tags: ['Narator', 'Review'], mapping: 'alloy', elevenLabsId: 'MF3mGyEYCl7XYW7Lec61' },
   
   // COWOK - BASS & COOL
-  { name: 'Puck', tags: ['Pria', 'Lucu'], mapping: 'echo' },
-  { name: 'Zephyr', tags: ['Pria', 'Cool'], mapping: 'onyx' },
-  { name: 'Adam', tags: ['Pria', 'Deep'], mapping: 'adam' },
-  { name: 'Antoni', tags: ['Pria', 'Wibawa'], mapping: 'antoni' },
-  { name: 'Liam', tags: ['Pria', 'Energi'], mapping: 'liam' },
-  { name: 'Josh', tags: ['Pria', 'Reviewer'], mapping: 'josh' },
-  { name: 'Sam', tags: ['Pria', 'Casual'], mapping: 'sam' },
-  { name: 'Brian', tags: ['Pria', 'Narator'], mapping: 'brian' },
+  { name: 'Puck', tags: ['Pria', 'Lucu'], mapping: 'echo', elevenLabsId: 'VR6AewrXVreH9W6Vm6m7' },
+  { name: 'Zephyr', tags: ['Pria', 'Cool'], mapping: 'onyx', elevenLabsId: 'pNInz6obpgnuMvscL6mE' },
+  { name: 'Adam', tags: ['Pria', 'Deep'], mapping: 'adam', elevenLabsId: 'pNInz6obpgnuMvscL6mE' },
+  { name: 'Antoni', tags: ['Pria', 'Wibawa'], mapping: 'antoni', elevenLabsId: 'ErXw9S1q38YvI4TN9vsh' },
+  { name: 'Liam', tags: ['Pria', 'Energi'], mapping: 'liam', elevenLabsId: 'TX3LPaxmHKxFfW6Y88Xf' },
+  { name: 'Josh', tags: ['Pria', 'Reviewer'], mapping: 'josh', elevenLabsId: 'pNInz6obpgnuMvscL6mE' },
+  { name: 'Sam', tags: ['Pria', 'Casual'], mapping: 'sam', elevenLabsId: 'yoZ06psp692mEpeIWuR7' },
+  { name: 'Brian', tags: ['Pria', 'Narator'], mapping: 'brian', elevenLabsId: 'pNInz6obpgnuMvscL6mE' },
 ];
 
 export const devices = [
